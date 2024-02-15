@@ -6,9 +6,6 @@ const Footer = () => {
   const typographySx = { textTransform: 'capitalize', mb: 2 };
   const linkSx = { textDecoration: 'none', padding: 4, color:"white", maxWidth:"50px"};
 
-  const handleContactClick = () => {
-    window.location.href = 'mailto:msaidozturk1@gmail.com';
-  };
 
   const titles = {
     "Über uns": [

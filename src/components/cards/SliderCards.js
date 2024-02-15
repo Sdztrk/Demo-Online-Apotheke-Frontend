@@ -14,7 +14,7 @@ const url = process.env.REACT_APP_API_BASEURL;
 
 const SliderCards = ({ product }) => {
     const dispatch = useDispatch();
-    const { _id, image, price, name } = product;
+    const { image, price, name } = product;
 
     const handleAddToShoppingCart = () => {
         dispatch(addToShoppingCard(product));

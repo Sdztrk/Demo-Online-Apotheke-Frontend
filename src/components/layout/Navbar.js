@@ -44,7 +44,7 @@ const ResponsiveAppBar = () => {
     };
     // Call the function to fetch user profile when the component mounts
     fetchUserProfile();
-  }, [])
+  }, [currentUser,dispatch])
   
   //navmenu and usermenu email val
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -263,8 +263,6 @@ const ResponsiveAppBar = () => {
                     to={'/Admin'}
                     style={{
                       width: '100%',
-                      textAlign: 'left',
-                      color: 'text.primary',
                       textDecoration:"none",
                       textAlign:"center",
                       paddingBottom:"5px",
@@ -282,8 +280,6 @@ const ResponsiveAppBar = () => {
                     to={'/Profile'}
                     style={{
                       width: '100%',
-                      textAlign: 'left',
-                      color: 'text.primary',
                       textDecoration:"none",
                       textAlign:"center",
                       paddingBottom:"5px",
@@ -298,8 +294,6 @@ const ResponsiveAppBar = () => {
                     onClick={handleLogout}
                     style={{
                       width: '100%',
-                      textAlign: 'left',
-                      color: 'text.primary',
                       textDecoration:"none",
                       textAlign:"center",
                       paddingBottom:"5px",
@@ -389,7 +383,7 @@ const ResponsiveAppBar = () => {
                   </Box>
                 </form>
                 <Typography style={{ marginTop: '2.5rem', textAlign: "center" }}>
-                  Sie haben bereits ein Konto? <a href='#' onClick={() => { closeModal(); openLoginModal(); }}>Anmelden</a>
+                  Sie haben bereits ein Konto? <Button onClick={() => { closeModal(); openLoginModal(); }}>Anmelden</Button>
                 </Typography>
               </Box>
             </Modal>
@@ -434,7 +428,7 @@ const ResponsiveAppBar = () => {
                   </Box>
                 </form>
                 <Typography style={{ marginTop: '2.5rem', textAlign: "center" }}>
-                  Sie haben noch kein Konto? <a href='#' onClick={() => { openModal(); closeLoginModal(); }}>Registrieren</a>
+                  Sie haben noch kein Konto? <Button onClick={() => { openModal(); closeLoginModal(); }}>Registrieren</Button>
                 </Typography>
               </Box>
             </Modal>

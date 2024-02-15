@@ -7,8 +7,6 @@ import SpeedDialIcon from '@mui/material/SpeedDialIcon';
 import SpeedDialAction from '@mui/material/SpeedDialAction';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import Person2Icon from '@mui/icons-material/Person2';
-import { useSelector } from 'react-redux';
-
 
 
 const SpeedDialTooltipOpen = () => {

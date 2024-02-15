@@ -1,31 +1,39 @@
+import Rachen from "../images/complaintImages/Rachen.jpg"
+import Schlafen from "../images/complaintImages/Schlafen.jpg"
+import Stress from "../images/complaintImages/Stress.jpg"
+import Herz from "../images/complaintImages/Herz.webp"
+import Magen from "../images/complaintImages/Magen.webp"
+import Schnupfen from "../images/complaintImages/Schnupfen.jpg"
+
+
 export const categories = [
     {
-      image: 'https://cfcdn.aerzteblatt.de/bilder/2020/04/img243240617.jpg',
+      image: Rachen,
       complaint: 'Rachen',
       href: '/Throat',
     },
     {
-      image: 'https://www.usz.ch/app/uploads/2020/12/Schlafstoerung-original-scaled.jpg',
+      image: Schlafen,
       complaint: 'Schlafen',
       href: '/Sleep',
     },
     {
-      image: 'https://www.psychische-gesundheit-donaueschingen.de/fileadmin/_processed_/4/2/csm_Office_worker_19257_web_16x8_26e9d5a767.jpg',
+      image: Stress,
       complaint: 'Stress',
       href: '/Stress',
     },
     {
-      image: 'https://images.praxisvita.de/herz-stoerungen-0,id=c2e71b96,b=praxisvita,w=1200,rm=sk.webp',
+      image: Herz,
       complaint: 'Herz',
       href: '/Herz',
     },
     {
-      image: 'https://www.infranken.de/storage/image/0/5/1/9/3769150_artikel-detail-bild_1ArrXe_oTpd5h.webp',
+      image: Magen,
       complaint: 'Magen',
       href: '/Magen',
     },
     {
-      image: 'https://www.ratiopharm.de/assets/media/ratiopharm-de_RWD/Ratgeber/Erkaeltung/Schnupfen/Mann_schneuzend_462_294.jpg',
+      image: Schnupfen,
       complaint: 'Schnupfen',
       href: '/Schnupfen',
     },
