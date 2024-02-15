@@ -8,7 +8,7 @@ import Schnupfen from "../images/complaintImages/Schnupfen.jpg"
 
 export const categories = [
     {
-      image: Rachen,
+      image: "",
       complaint: 'Rachen',
       href: '/Throat',
     },
