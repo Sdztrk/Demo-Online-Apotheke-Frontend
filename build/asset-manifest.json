@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.396752ab.css",
+    "main.js": "/static/js/main.2a436603.js",
+    "static/media/Rachen.jpg": "/static/media/Rachen.cdc9261b6ae8d37ef104.jpg",
+    "static/media/Schlafen.jpg": "/static/media/Schlafen.4912b7288af5f2212f31.jpg",
+    "static/media/logo.jpg": "/static/media/logo.fdeff2dda856ac75ecd0.jpg",
+    "static/media/Schnupfen.jpg": "/static/media/Schnupfen.c34da45148844c83a366.jpg",
+    "static/media/Stress.jpg": "/static/media/Stress.7b23a8ba14f4b87baf12.jpg",
+    "static/media/Herz.webp": "/static/media/Herz.852b5f2ad0d10619a53f.webp",
+    "static/media/Magen.webp": "/static/media/Magen.e1bc5174b26616ad9f7f.webp",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/index.html",
+    "main.396752ab.css.map": "/static/css/main.396752ab.css.map",
+    "main.2a436603.js.map": "/static/js/main.2a436603.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.396752ab.css",
+    "static/js/main.2a436603.js"
+  ]
+}
