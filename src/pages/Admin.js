@@ -2,7 +2,7 @@ import React from 'react'
 
 const Admin = () => {
   return (
-    <div>Admin</div>
+    <div style={{marginTop:"300px"}}>Admin</div>
   )
 }
 
