@@ -58,7 +58,7 @@ const MedicineCard = ({ product }) => {
               transition: "transform 0.5s", // Add transition for smooth scaling
 
             }}
-            image={`${url}/${product.image}`}
+            image={product.image}
           />
           <CardContent sx={{ textAlign: "center" }}>
             <Typography sx={{textTransform:"uppercase"}} variant="h6" gutterBottom>
