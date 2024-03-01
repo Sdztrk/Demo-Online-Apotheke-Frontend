@@ -30,12 +30,12 @@ const StyledButton = styled(Button)(({ theme }) => ({
 // PaymentFailed component
 const PaymentFailed = () => {
   return (
-    <StyledContainer component="main" maxWidth="xs">
-      <StyledIcon />
-      <StyledText variant="h5">
+    <StyledContainer component="main" maxWidth="xs" id="payment-failed-container">
+      <StyledIcon id="error-icon" />
+      <StyledText variant="h5" id="payment-failed-message">
         Oops! Die Zahlung ist fehlgeschlagen.
       </StyledText>
-      <StyledText>
+      <StyledText id="payment-failed-description">
         Bitte überprüfen Sie Ihre Zahlungsinformationen und versuchen Sie es erneut.
       </StyledText>
       <StyledButton
@@ -43,6 +43,7 @@ const PaymentFailed = () => {
         to="/ShoppingPage"
         variant="contained"
         color="primary"
+        id="back-to-shopping-button"
       >
         Zurück zum Einkaufen
       </StyledButton>

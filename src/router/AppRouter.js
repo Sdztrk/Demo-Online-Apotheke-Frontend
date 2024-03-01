@@ -19,7 +19,6 @@ import Throat from "../pages/illnessPages/Throat"
 import Magen from "../pages/illnessPages/Magen"
 import Schnupfen from "../pages/illnessPages/Schnupfen"
 import Stress from "../pages/illnessPages/Stress"
-import Admin from '../pages/Admin'
 import { useSelector } from 'react-redux'
 
 
@@ -49,7 +48,6 @@ const AppRouter = () => {
         <Route path='/Magen' element={<Magen/>}/>
         <Route path='/Stress' element={<Stress/>}/>
         <Route path='/Schnupfen' element={<Schnupfen/>}/>
-        <Route path='/Admin' element={<Admin/>}/>
         {/* <Route element={<PrivateRouter/>}>
           <Route path="/details/:id" element={<MovieDetail />} />
         </Route> */}

@@ -4,7 +4,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Link } from 'react-router-dom';
 import { styled } from '@mui/system';
 import { useDispatch } from 'react-redux';
-import { clearShoppingCard } from '../redux/shoppingCardSlice';  // Update the path
+import { clearShoppingCard } from '../redux/shoppingCardSlice';
 
 // Define styles using styled
 const StyledContainer = styled(Container)(({ theme }) => ({
@@ -23,7 +23,6 @@ const StyledIcon = styled(CheckCircleIcon)(({ theme }) => ({
 const StyledText = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(4),
   fontSize: 20,
-
 }));
 
 const StyledButton = styled(Button)(({ theme }) => ({
@@ -40,9 +39,9 @@ const SuccessfulPayment = () => {
   }, [dispatch]);
 
   return (
-    <StyledContainer component="main" maxWidth="xs">
-      <StyledIcon />
-      <StyledText variant="h5">
+    <StyledContainer component="main" maxWidth="xs" id="successful-payment-container">
+      <StyledIcon id="check-circle-icon" />
+      <StyledText variant="h5" id="successful-payment-message">
         Vielen Dank! Die Zahlung war erfolgreich.
       </StyledText>
       <StyledButton
@@ -50,6 +49,7 @@ const SuccessfulPayment = () => {
         to="/"
         variant="contained"
         color="primary"
+        id="back-to-shopping-button"
       >
         Zurück zum Einkaufen
       </StyledButton>

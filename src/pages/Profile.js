@@ -1,5 +1,3 @@
-// ProfilePage.js
-
 import React, { useEffect, useState } from 'react';
 import ProfileCard from '../components/cards/ProfileCard';
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,26 +13,17 @@ const ProfilePage = () => {
   const [img, setImg] = useState(null);
   const [address, setAddress] = useState('');
 
-  //getting user profile
-
   const dispatch = useDispatch();
   const userData = useSelector((state) => state.profile.data);
-  //function to get users profile
+
   useEffect(() => {
     const fetchUserProfile = async () => {
       await dispatch(getProfile());
-
     };
-    // Call the function to fetch user profile when the component mounts
     fetchUserProfile();
-  }, [dispatch])
+  }, [dispatch]);
 
-
-
-
-
-  const url = process.env.REACT_APP_API_BASEURL
-
+  const url = process.env.REACT_APP_API_BASEURL;
 
   const handleRefresh = () => {
     window.location.reload(true);
@@ -61,17 +50,12 @@ const ProfilePage = () => {
     e.preventDefault();
 
     try {
-      // Prepare the data to be sent to the server
       const formData = new FormData();
       formData.append('image', img);
       formData.append('address', address);
 
-      // Replace 'your_token_here' with your actual Bearer token
-      const token = sessionStorage.getItem("token")
-      console.log(token)
+      const token = sessionStorage.getItem("token");
 
-
-      // Make a POST request to create a new profile
       const response = await axios.post(`${url}/api/v1/profile`, formData, {
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -79,18 +63,7 @@ const ProfilePage = () => {
         },
       });
 
-      console.log(response)
-      console.log(response.status);
-      console.log(response.statusText);
-      handleRefresh()
-
-      // if (response.ok) {
-      //   console.log('New profile with image and address created successfully!');
-      //   // You can perform additional actions after successful profile creation
-      // } else {
-      //   console.error('Failed to create a new profile');
-      //   // Handle error if the profile creation fails
-      // }
+      handleRefresh();
     } catch (error) {
       console.error('Error during profile creation:', error);
     }
@@ -114,6 +87,7 @@ const ProfilePage = () => {
               type="file"
               accept="image/*"
               onChange={handleImageChange}
+              data-testid="upload-input"
             />
           </label>
         </Box>
@@ -124,10 +98,11 @@ const ProfilePage = () => {
             value={address}
             onChange={handleAddressChange}
             placeholder="Enter address"
+            data-testid="address-input"
           />
         </Box>
         <Box>
-          <Button type="submit" variant="contained" color="primary">
+          <Button type="submit" variant="contained" color="primary" data-testid="save-button">
             Save
           </Button>
         </Box>

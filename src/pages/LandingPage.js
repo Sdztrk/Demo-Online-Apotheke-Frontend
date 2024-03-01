@@ -15,26 +15,26 @@ const LandingPage = () => {
 
   return (
     <>
-    <SearchBarComponent/>
+    <SearchBarComponent data-testid="search-bar" />
       <Box sx={{ mt: 5 }}>
-        <Typography gutterBottom variant="h4" component="div" sx={{ textAlign: "center" }} >
+        <Typography gutterBottom variant="h4" component="div" sx={{ textAlign: "center" }} data-testid="landing-page-title">
           Wo drückt's?
         </Typography>
         <Grid container sx={{ px: { xs: 0, md: 20, lg: 30, xl: 40 } }} spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
           {categories.map((category, index) => (
-            <ComplaintCards key={index} category={category} />
+            <ComplaintCards key={index} category={category} data-testid={`complaint-card-${index}`} />
           ))}
         </Grid>
         {/* This is the discount slider */}
-        {breakpoint && <SliderComponent />}
+        {breakpoint && <SliderComponent data-testid="slider" />}
         {/* These are the products from our recommedations */}
-        <Recommendation />
+        <Recommendation data-testid="recommendation" />
         <Box sx={{
           position: 'fixed',
           bottom: '1%', // Adjust as needed
           right: '1%',
         }}>
-          <SpeedDialTooltipOpen />
+          <SpeedDialTooltipOpen data-testid="speed-dial" />
         </Box>
       </Box>
     </>
