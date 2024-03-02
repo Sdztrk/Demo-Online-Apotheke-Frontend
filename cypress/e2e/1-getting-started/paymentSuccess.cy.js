@@ -1,7 +1,7 @@
 describe('SuccessfulPayment component', () => {
     beforeEach(() => {
       // Visit the page containing the SuccessfulPayment component
-      cy.visit('http://localhost:3000/#/PaymentSuccess');
+      cy.visit('/PaymentSuccess');
     });
   
     it('should display successful payment message with correct text', () => {

@@ -1,7 +1,7 @@
 describe('PaymentFailed component', () => {
     beforeEach(() => {
       // Visit the page containing the PaymentFailed component
-      cy.visit('http://localhost:3000/#/PaymentFailed');
+      cy.visit('/PaymentFailed');
     });
   
     it('should display payment failed message with correct text', () => {

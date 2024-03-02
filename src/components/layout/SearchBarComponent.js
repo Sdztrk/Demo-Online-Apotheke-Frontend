@@ -1,9 +1,9 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 import SearchBar from './SearchBar';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts,getProductById } from "../../redux/productSlice";
+import { getProducts, getProductById } from "../../redux/productSlice";
 import { Avatar } from '@mui/material';
 
 
@@ -30,16 +30,16 @@ const SearchBarComponent = () => {
 
     const handleDetailsClick = (id) => {
         dispatch(getProductById(id));
-      };
-      
+    };
+
 
     useEffect(() => {
         // Function to fetch products when the component mounts
         dispatch(getProducts());
-      }, [dispatch]);
+    }, [dispatch]);
 
     return (
-        <div>
+        <div data-cy="search-bar-component">
             <Box
                 sx={{
                     display: "flex",
@@ -48,12 +48,12 @@ const SearchBarComponent = () => {
                 }}
                 onMouseEnter={() => setHovered(true)} // Set hovered to true on mouse enter
                 onMouseLeave={() => setHovered(false)} // Set hovered to false on mouse leave
+                data-cy="search-box-container"
             >
                 <SearchBar setFocus={setShowResults} searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-                { (hovered || showResults)  && searchQuery &&
+                {(hovered || showResults) && searchQuery &&
                     <Box
-                    onMouseOver={() => setShowResults(true)}
-
+                        onMouseOver={() => setShowResults(true)}
                         sx={{
                             position: "absolute",
                             top: "50%",
@@ -62,45 +62,47 @@ const SearchBarComponent = () => {
                             backgroundColor: "white",
                             width: { xs: "95%", sm: "95%", md: "60%", lg: "40%" },
                             height: { xs: "20%", sm: "15%", md: "30%", lg: "20%" },
-                            display:{sx:"none", sm:"none",md:"flex"},
+                            display: { sx: "none", sm: "none", md: "flex" },
                             marginTop: "-200px",
                             flexDirection: "column",
-                            borderRadius:"22px",
-                            overflow:"auto",
-                            zIndex:999
+                            borderRadius: "22px",
+                            overflow: "auto",
+                            zIndex: 999
                         }}
+                        data-cy="search-results-container"
                     >
                         {dataFiltered.map((product) => (
-                            
+
                             <Link
                                 style={{
                                     width: "100%",
                                     height: "45px",
-                                    zIndex:1000,
-                                    display:"flex",
-                                    flexDirection:"row",
-                                    justifyContent:"space-between",
-                                    alignItems:"center",
+                                    zIndex: 1000,
+                                    display: "flex",
+                                    flexDirection: "row",
+                                    justifyContent: "space-between",
+                                    alignItems: "center",
                                     borderBottom: "1px solid black",
-                                    textDecoration:"none",
-                                   color:"black"
+                                    textDecoration: "none",
+                                    color: "black"
                                 }}
                                 key={product._id}
                                 to={`/product/${product._id}`}
                                 onClick={() => handleDetailsClick(product._id)}
                                 onMouseOver={() => setShowResults(true)}
+                                data-cy={`product-link-${product._id}`}
                             >
-                                <span 
-                                style={{
-                                    paddingLeft:"15px",
-                                    "&:hover": {
-                                        backgroundColor: "red", 
-                                    }
-                            }}
-                            >{product.name} - {product.packageSize} mg
-                            </span>
-                                {/* <image src={`${url}/${product.image}`} /> */}
-                                <Avatar style={{paddingRight:"15px"}} alt="User Avatar" src={`${url}/${product.image}`} />
+                                <span
+                                    style={{
+                                        paddingLeft: "15px",
+                                        "&:hover": {
+                                            backgroundColor: "red",
+                                        }
+                                    }}
+                                    data-cy={`product-name-${product._id}`}
+                                >{product.name} - {product.packageSize} mg
+                                </span>
+                                <Avatar style={{ paddingRight: "15px" }} alt="User Avatar" src={`${url}/${product.image}`} data-cy={`product-avatar-${product._id}`} />
                             </Link>
                         ))}
                     </Box>}

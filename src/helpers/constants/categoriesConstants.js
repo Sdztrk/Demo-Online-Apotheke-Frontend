@@ -13,7 +13,7 @@ export const categories = [
       href: '/Throat',
     },
     {
-      image: Schlafen,
+      image: "",
       complaint: 'Schlafen',
       href: '/Sleep',
     },

@@ -1,6 +1,6 @@
 describe('Checkout', () => {
     beforeEach(() => {
-      cy.visit('http://localhost:3000/#/ShoppingPage');
+      cy.visit('/ShoppingPage');
     });
   
     it('should display empty cart message when cart is empty', () => {
